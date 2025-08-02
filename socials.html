@@ -41,26 +41,24 @@
       position: relative;
       margin: 5px;
       background-color: #4b4b4b;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
     }
 
     .icon {
       font-size: 1em;
     }
 
+    .linktree:hover { background-color: #39e09b; }
     .email:hover { background-color: #23c8c8; }
     .instagram:hover { background: #f86ee1; }
     .twitter:hover { background-color: #26a7de; }
     .pinterest:hover { background-color: #c8232c; }
     .discord:hover { background-color: #5865F2; }
+    .steam:hover { background-color: #1b2838; }
     .spotify:hover { background-color: #1DB954; }
-    .myanimelist:hover { background-color: #2e51a2; }
     .letterboxd:hover { background-color: #181818; }
-
-    .social {
-      position: relative;
-      margin: 10px;
-      cursor: pointer;
-    }
+    .myanimelist:hover { background-color: #2e51a2; }
 
     .social:hover {
       color: #fff;
@@ -71,6 +69,10 @@
 <body>
 
   <div class="wrapper">
+
+    <div id="linktree" onclick="navigate(this.id)" class="fill linktree" aria-label="Linktree" title="Linktree">
+      <span class="icon"><i class="fa-solid fa-link"></i></span>
+    </div>
 
     <div id="email" onclick="navigate(this.id)" class="fill email" aria-label="Email" title="Email">
       <span class="icon"><i class="fa-solid fa-envelope"></i></span>
@@ -92,16 +94,20 @@
       <span class="icon"><i class="fab fa-discord"></i></span>
     </div>
 
+    <div id="steam" onclick="navigate(this.id)" class="fill steam" aria-label="Steam" title="Steam">
+      <span class="icon"><i class="fab fa-steam"></i></span>
+    </div>
+
     <div id="spotify" onclick="navigate(this.id)" class="fill spotify" aria-label="Spotify" title="Spotify">
       <span class="icon"><i class="fab fa-spotify"></i></span>
     </div>
 
-    <div id="myanimelist" onclick="navigate(this.id)" class="fill myanimelist" aria-label="MyAnimeList" title="MyAnimeList">
-      <span class="icon"><i class="fa-solid fa-globe"></i></span> <!-- no FA icon -->
+    <div id="letterboxd" onclick="navigate(this.id)" class="fill letterboxd" aria-label="Letterboxd" title="Letterboxd">
+      <span class="icon"><i class="fa-solid fa-film"></i></span>
     </div>
 
-    <div id="letterboxd" onclick="navigate(this.id)" class="fill letterboxd" aria-label="Letterboxd" title="Letterboxd">
-      <span class="icon"><i class="fa-solid fa-film"></i></span> <!-- no FA icon -->
+    <div id="myanimelist" onclick="navigate(this.id)" class="fill myanimelist" aria-label="MyAnimeList" title="MyAnimeList">
+      <span class="icon"><i class="fa-solid fa-globe"></i></span>
     </div>
 
   </div>
@@ -109,14 +115,16 @@
   <script>
     function navigate(id) {
       const urls = {
+        linktree: "https://linktr.ee/diegofesr",
         email: "mailto:diegofesr@gmail.com",
         instagram: "https://instagram.com/too.much.facha",
         twitter: "https://x.com/wachaflequiyuda",
-        pinterest: "https://www.pinterest.com/",
-        discord: "https://discord.com/users/your-discord-id", // <-- reemplazá con tu ID
-        spotify: "https://open.spotify.com/user/your-spotify-id", // <-- reemplazá con tu user
-        myanimelist: "https://myanimelist.net/profile/your-user", // <-- reemplazá con tu user
-        letterboxd: "https://letterboxd.com/your-user" // <-- reemplazá con tu user
+        pinterest: "https://www.pinterest.com/diegofesr",
+        discord: "https://discord.com/users/diegofesr#0909",
+        steam: "https://steamcommunity.com/id/diegofesr",
+        spotify: "https://open.spotify.com/user/22set6akykoqjutl776t6p67i?si=OBaxphDGRzyWi1wYkPscyA&nd=1&dlsi=a2f3154d2ccc4722",
+        letterboxd: "https://letterboxd.com/ihatemarvelfans",
+        myanimelist: "https://myanimelist.net/profile/diegofesr"
       };
 
       if (urls[id]) {
@@ -126,8 +134,5 @@
   </script>
 
 </body>
-
-</html>
-
 
 </html>
